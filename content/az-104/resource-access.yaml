@@ -1,0 +1,125 @@
+- id: az-104.identities-governance.resource-access.0003
+  cert: az-104
+  domain: identities-governance
+  skill: resource-access
+  type: multiple_choice
+  stem: A user is a member of Group A, and Group A is a member of Group B, which has a role assignment.
+    Does the user inherit the permissions from Group B?
+  options:
+  - id: a
+    text: 'Yes'
+  - id: b
+    text: 'No'
+  - id: c
+    text: Only if the user is also a member of Group B
+  - id: d
+    text: Only if the role assignment is at the same scope
+  answer:
+  - a
+  explanation: Role assignments are transitive for groups, so the user inherits permissions from nested
+    groups.
+  source_url: https://learn.microsoft.com/en-us/azure/role-based-access-control/overview
+  quote: Role assignments are transitive for groups, which means that if a user is a member of a group
+    and that group is a member of another group that has a role assignment, the user has the permissions
+    in the role assignment.
+  retrieved_at: 2026-10-29
+  difficulty: 2
+  tags:
+  - group-transitive
+  - inheritance
+  status: approved
+  last_reviewed: 2026-10-29
+- id: az-104.identities-governance.resource-access.0005
+  cert: az-104
+  domain: identities-governance
+  skill: resource-access
+  type: multiple_choice
+  stem: When creating a role assignment in Azure RBAC, which of the following is NOT one of the three
+    core components?
+  options:
+  - id: a
+    text: security principal
+  - id: b
+    text: role definition
+  - id: c
+    text: scope
+  - id: d
+    text: permission set
+  answer:
+  - d
+  explanation: 'A role assignment consists of three elements: security principal, role definition, and
+    scope. Permission set is not part of the assignment.'
+  source_url: https://learn.microsoft.com/en-us/azure/role-based-access-control/overview
+  quote: 'A role assignment consists of three elements: security principal, role definition, and scope.'
+  retrieved_at: 2026-10-29
+  difficulty: 1
+  tags:
+  - RBAC
+  - role assignment
+  - components
+  status: approved
+  last_reviewed: 2026-10-29
+- id: az-104.identities-governance.resource-access.0006
+  cert: az-104
+  domain: identities-governance
+  skill: resource-access
+  type: scenario
+  stem: You need to grant a team of developers access to manage all resources within a particular subscription,
+    but you do not want them to have access to resources in other subscriptions. Which scope level should
+    you apply the role assignment to?
+  options:
+  - id: a
+    text: management group
+  - id: b
+    text: subscription
+  - id: c
+    text: resource group
+  - id: d
+    text: resource
+  answer:
+  - b
+  explanation: The subscription scope applies to all resources within that subscription.
+  source_url: https://learn.microsoft.com/en-us/azure/role-based-access-control/overview
+  quote: 'In Azure, you can specify a scope at four levels: management group , subscription, resource
+    group , or resource.'
+  retrieved_at: 2026-10-29
+  difficulty: 1
+  tags:
+  - RBAC
+  - scope
+  - subscription
+  status: approved
+  last_reviewed: 2026-10-29
+- id: az-104.identities-governance.resource-access.0008
+  cert: az-104
+  domain: identities-governance
+  skill: resource-access
+  type: scenario
+  stem: A user has Contributor role at subscription scope and Reader role at a resource group. What permission
+    level does the user have on resources within that resource group?
+  options:
+  - id: a
+    text: Contributor
+  - id: b
+    text: Reader
+  - id: c
+    text: Owner
+  - id: d
+    text: No access
+  answer:
+  - a
+  explanation: Because Azure RBAC is additive, the Contributor permissions at subscription scope dominate,
+    giving the user Contributor rights on the resource group.
+  source_url: https://learn.microsoft.com/en-us/azure/role-based-access-control/overview
+  quote: Consider the following example where a user is granted the Contributor role at the subscription
+    scope and the Reader role on a resource group. The sum of the Contributor permissions and the Reader
+    permissions is effectively the Contributor role for the subscription.
+  retrieved_at: 2026-10-29
+  difficulty: 2
+  tags:
+  - RBAC
+  - role assignment
+  - permissions
+  - subscription
+  status: approved
+  last_reviewed: 2026-10-29

@@ -1,0 +1,2 @@
+# Scripts in pipeline/ import each other by bare name (e.g. `from common import ...`), so treat it as first-party.
+src = ["pipeline"]
